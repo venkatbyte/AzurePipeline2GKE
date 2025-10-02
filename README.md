@@ -1,5 +1,8 @@
 # AzurePipeline2GKE
 This repository will expalin how to create the service connection in Azure Devops to Google Cloud Engine (GKE) to deploy any microservices
+
+Once you create kubernetes cluster in CGP either through Autopilot or Standard method, run below commands to set up service connection.  
+
 ## 1. Create Service Account to manange the gke cluster externally.
 ```
 kubectl create serviceaccount venkatbyte-pipelines
@@ -17,8 +20,8 @@ kubectl apply -f -
 ```
 kubectl create clusterrolebinding venkatbyte-pipelines--clusterrole=cluster-admin --serviceaccount=default:venkatbyte-pipelines
 ```
-## 4. Create Kubernetes Cluster in CGP
-Once you create kubernetes cluster in CGP either through Autopilot or Standard method, run below command to get cluster name.  
+## 4. Get the cluster name
+run below command to get cluster name.  
 ```
 gcloud container clusters list
 ```
